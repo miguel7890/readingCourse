@@ -3,6 +3,11 @@
 	$conexion = new sqlite3('db/students.db');
 
 	$sql = $conexion -> query("SELECT * FROM estudiantes");
+	$sql2 = $conexion -> query("SELECT * FROM estudiantes");
+	$count=0;
+	while ($fetch = $sql2 -> FetchArray()) {
+		$count++;
+	}
 
 ?>
 
@@ -108,7 +113,7 @@
 					<h1>Estadísticas</h1>
 					<div class="space">
 						<h2>Cupos:</h2>
-						<h3>30 / 30</h3>
+						<h3><?php echo 30-$count; ?> / 30</h3>
 					</div>
 					<hr>
 					<div class="space">
@@ -123,5 +128,20 @@
 		</div>
 	</section>
 	
+<script>
+	var fecha = new Date();
+	day = fecha.getDate();
+	mes = fecha.getMonth()+1;
+
+	if (day <= 9) {
+			day = "0"+day;
+		}
+		if (mes <= 9) {
+			mes = "0"+mes;
+		}
+
+	var date = fecha.getFullYear()+"-"+mes+"-"+day;
+	document.getElementById('Inscripcion').value = date;
+</script>
 </body>
 </html>
