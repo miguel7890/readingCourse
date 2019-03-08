@@ -26,7 +26,7 @@
 				<div class="box-form">
 					<h1>Formulario de inscripción</h1>
 					<hr>
-					<form action="fn/send.php">
+					<form action="fn/send.php" method="POST">
 						<h2>Datos personales</h2>
 						<div class="space">
 							<div class="row">
@@ -84,8 +84,8 @@
 							</select>
 						</div>
 						<div class="space">
-							<label for="Nacimiento">Fecha de inscripción</label><br>
-							<input type="date" name="nacimiento" id="Nacimiento">
+							<label for="Inscripcion">Fecha de inscripción</label><br>
+							<input type="date" name="inscripcion" id="Inscripcion">
 						</div>
 						<br><br><hr>
 						<div style="margin: 20px 0px;" class="center-xs">
