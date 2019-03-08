@@ -1,3 +1,8 @@
+<?php 
+	$conexion = new sqlite3('db/students.db');
+
+	$sql = $conexion -> query("SELECT * FROM estudiantes");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,21 +33,24 @@
 				<a href="create.php?type=view"><button id="toPDF" class="btn btn-action">Crear informe pdf</button></a>
 				<a href="create.php?type=lista"><button id="toPDF" class="btn btn-action">Lista pdf</button></a>
 			</div>
-			<div class="col-xs-12 col-md-4 space">
-				<div class="box-student">
-					<h5 class="marginNone">#1</h5>
-					<h2>Antonio Alexis Lemus Valladares</h2>
-					<p><b>Fecha de nacimiento:</b> 20/04/2010</p>
-					<p><b>Grado:</b> 4º Grado</p>
-					<p><b>Encargado:</b> José Lorenzo López De Paz</p>
-					<p><b>Contacto:</b> 7033-8902</p>
-					<p><b>Curso:</b> Lectura <span style="padding: 0px 10px;">|</span> <b>Inscripción:</b> 07/03/2019</p>
-					<hr>
-					<div class="center-xs">
-						<button class="btn btn-natural" style="width: 50%;">Editar</button>
+			<?php while($row = $sql -> FetchArray()){ ?>
+				<div class="col-xs-12 col-md-4 space">
+					<div class="box-student">
+						<h5 class="marginNone"><?php echo $row['id_student']; ?></h5>
+						<h2><?php echo $row['nombre']." ".$row['apellido']; ?></h2>
+						<p><b>Fecha de nacimiento:</b> <?php echo $row['nacimiento']; ?></p>
+						<p><b>Grado:</b> <?php echo $row['grado']; ?>º Grado</p>
+						<p><b>Encargado:</b> <?php echo $row['encargado']; ?></p>
+						<p><b>Contacto:</b> <?php echo $row['contacto']; ?></p>
+						<p><b>Curso:</b> Lectura <span style="padding: 0px 10px;">|</span> <b>Inscripción:</b> <?php echo $row['inscripcion']; ?></p>
+						<hr>
+						<div class="center-xs">
+							<a href="edit.php?id=<?php echo $row['id_student']; ?>"><button class="btn btn-natural" style="width: 30%;">Editar</button></a>
+							<a href="fn/delete.php?id=<?php echo $row['id_student']; ?>"><button class="btn btn-natural" style="width: 30%;">Eliminar</button></a>
+						</div>
 					</div>
 				</div>
-			</div>
+			<?php }; ?>
 
 		</div>
 	</section>

@@ -5,12 +5,16 @@
 	<title>Listado de estudiantes</title>
 </head>
 <body>
+	
+	<?php
+		$conexion = new sqlite3('db/students.db');
 
-	Antonio Alexis Lemus Valladares<span>,</span>
-	Antonio Alexis Lemus Valladares<span>,</span>
-	Antonio Alexis Lemus Valladares<span>,</span>
-	Antonio Alexis Lemus Valladares<span>,</span>
-	Antonio Alexis Lemus Valladares<span>,</span>
+		$sql = $conexion -> query("SELECT * FROM estudiantes WHERE estado=1");
+
+		while($row = $sql -> FetchArray()){
+			echo $row['nombre']." ".$row['apellido'].'<span>,</span>';
+		};
+	?>
 
 </body>
 </html>

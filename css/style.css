@@ -25,6 +25,7 @@ button { cursor: pointer; }
 input,select,textarea {
 	width: 100%;
 	outline: none;
+	color: #2779BD;
 	padding: 10px 0px;
 	border-color: #B8C2CC;
 	transition: all 0.3s ease-in-out;

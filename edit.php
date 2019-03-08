@@ -1,3 +1,13 @@
+<?php 
+
+	$conexion = new sqlite3('db/students.db');
+
+	$id = $_GET['id'];
+	$sql = $conexion -> query("SELECT * FROM estudiantes WHERE id_student='$id'");
+	$row = $sql -> FetchArray();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,20 +36,29 @@
 				<div class="box-form">
 					<h1>Formulario de edición</h1>
 					<hr>
-					<form action="fn/send.php">
+					<form action="fn/edit_student.php" method="POST">
 						<h2>Datos personales</h2>
+						<input type="hidden" name="id" value="<?php echo $id; ?>">
 						<div class="space">
-							<label for="Nombre">Nombre</label><br>
-							<input type="text" name="nombre" id="Nombre">
+							<div class="row">
+								<div class="col-xs-12 col-md-6">
+									<label for="Nombre">Nombre</label><br>
+									<input type="text" name="nombre" id="Nombre" value="<?php echo $row['nombre']; ?>">
+								</div>
+								<div class="col-xs-12 col-md-6">
+									<label for="Apellidos">Apellidos</label><br>
+									<input type="text" name="apellidos" id="Apellidos" value="<?php echo $row['apellido']; ?>">
+								</div>
+							</div>
 						</div>
 						<div class="space">
 							<label for="Nacimiento">Fecha de nacimiento</label><br>
-							<input type="date" name="nacimiento" id="Nacimiento">
+							<input type="date" name="nacimiento" id="Nacimiento" value="<?php echo $row['nacimiento']; ?>">
 						</div>
 						<div class="space">
 							<label for="Sexo">Sexo</label>
 							<select name="sexo" id="Sexo">
-								<option value="default">--</option>
+								<option value="<?php echo $row['sexo']; ?>"><?php echo $row['sexo']; ?></option>
 								<option value="hombre">Niño</option>
 								<option value="mujer">Niña</option>
 							</select>
@@ -47,7 +66,7 @@
 						<div class="space">
 							<label for="Contacto">Grado</label><br>
 							<select name="grado" id="Grado">
-								<option value="default">--</option>
+								<option value="<?php echo $row['grado']; ?>"><?php echo $row['grado']; ?></option>
 								<option value="1">1º Grado</option>
 								<option value="2">2º Grado</option>
 								<option value="3">3º Grado</option>
@@ -56,33 +75,33 @@
 						</div>
 						<div class="space">
 							<label for="Responsable">Padre de familia / Encargado</label><br>
-							<input type="text" name="responsable" id="Responsable">
+							<input type="text" name="responsable" id="Responsable" value="<?php echo $row['encargado']; ?>">
 						</div>
 						<div class="space">
 							<label for="Contacto">Contacto</label><br>
-							<input type="text" name="contacto" id="Contacto">
+							<input type="text" name="contacto" id="Contacto" value="<?php echo $row['contacto']; ?>">
 						</div>
 						<div class="space">
 							<label for="Cuidados">Padecimientos o medicamentos</label><br>
-							<input type="text" name="cuidados" id="Cuidados">
+							<input type="text" name="cuidados" id="Cuidados" value="<?php echo $row['cuidados']; ?>">
 						</div>
 						<h2>Datos específicos</h2>
 						<div class="space">
 							<label for="Curso">Curso</label><br>
 							<select name="curso" id="Curso">
-								<option value="default">--</option>
+								<option value="<?php echo $row['curso']; ?>"><?php echo $row['curso']; ?></option>
 								<option value="Lectura">Lectura</option>
 								<option value="Matemáticas">Matemáticas</option>
 							</select>
 						</div>
 						<div class="space">
-							<label for="Nacimiento">Fecha de inscripción</label><br>
-							<input type="date" name="nacimiento" id="Nacimiento">
+							<label for="Inscripcion">Fecha de inscripción</label><br>
+							<input type="date" name="inscripcion" id="Inscripcion" value="<?php echo $row['inscripcion']; ?>">
 						</div>
 						<br><br><hr>
 						<div style="margin: 20px 0px;" class="center-xs">
-							<button class="btn btn-action" id="send" name="send" style="width: 30%;">Editar</button>
-							<button class="btn btn-danger" id="send" name="send" style="width: 30%;">Cancelar</button>
+							<a><button type="submit" class="btn btn-action" id="send" name="send" style="width: 30%;">Editar</button></a>
+							<a href="./"><button type="button" class="btn btn-danger" id="send" name="send" style="width: 30%;">Cancelar</button></a>
 						</div>
 					</form>
 				</div>

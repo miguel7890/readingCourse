@@ -1,3 +1,11 @@
+<?php 
+
+	$conexion = new sqlite3('db/students.db');
+
+	$sql = $conexion -> query("SELECT * FROM estudiantes");
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,8 +56,8 @@
 							<label for="Sexo">Sexo</label>
 							<select name="sexo" id="Sexo">
 								<option value="default">--</option>
-								<option value="hombre">Niño</option>
-								<option value="mujer">Niña</option>
+								<option value="niño">Niño</option>
+								<option value="niña">Niña</option>
 							</select>
 						</div>
 						<div class="space">
@@ -105,7 +113,9 @@
 					<hr>
 					<div class="space">
 						<h2>Inscritos:</h2>
-						<p>Antonio Alexis Lemus Valladares <a href="edit.php">Editar</a></p>
+						<?php while ($row = $sql -> FetchArray() ) { ?>
+							<p><?php echo $row['nombre']." ".$row['apellido']; ?> <a href="edit.php?id=<?php echo $row['id_student']; ?>">Editar</a></p>
+						<?php }; ?>
 					</div>
 				</div>
 			</div>
