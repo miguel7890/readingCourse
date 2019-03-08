@@ -1,0 +1,82 @@
+body{
+	background: #F1F5F8;
+	font-family: sans-serif;
+}
+
+button { cursor: pointer; }
+
+.space { margin: 10px 0px; }
+
+.marginNone { margin: 0px; }
+
+.nav_bar {
+	color:white;
+	padding: 10px;
+	font-family: sans-serif;
+	background-color: #22292F;
+}
+
+.box-form {
+	padding: 15px;
+	background: white;
+	box-shadow: 0px 10px 100px rgba(0,0,0,0.2);
+}
+
+input,select,textarea {
+	width: 100%;
+	outline: none;
+	padding: 10px 0px;
+	border-color: #B8C2CC;
+	transition: all 0.3s ease-in-out;
+	border-width: 0px 0px 1px 0px;
+}
+
+input:focus {
+	border-color: #2779BD;
+}
+
+.btn {
+	border:none;
+	background: #B8C2CC;
+	border-radius: 5px;
+	margin: 0px 5px;
+	padding: 10px 25px;
+	transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+	background: #F1F5F8;
+}
+
+.btn-natural {
+	color:white;
+	background: #38A89D;
+}
+
+.btn-natural:hover {
+	background: #4DC0B5;
+}
+
+.btn-action {
+	color: white;
+	background: #1F9D55;
+}
+
+.btn-action:hover {
+	background: #38C172;
+}
+
+.btn-danger {
+	color: white;
+	background: #CC1F1A;
+}
+
+.btn-danger:hover {
+	background: #E3342F;
+}
+
+.box-student {
+	padding: 10px;
+	background: white;
+	box-shadow: 0px 10px 100px rgba(0,0,0,0.2);
+}
