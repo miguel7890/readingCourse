@@ -25,7 +25,8 @@
 				<h1>Listado</h1>
 			</div>
 			<div class="col-xs-12 col-md-4 center-xs end-md space">
-				<a href="create.php"><button id="toPDF" class="btn btn-action">Crear informe pdf</button></a>
+				<a href="create.php?type=view"><button id="toPDF" class="btn btn-action">Crear informe pdf</button></a>
+				<a href="create.php?type=lista"><button id="toPDF" class="btn btn-action">Lista pdf</button></a>
 			</div>
 			<div class="col-xs-12 col-md-4 space">
 				<div class="box-student">

@@ -1,6 +1,7 @@
 <?php 
+	$type = $_GET['type'];
 	ob_start();
-	require_once 'asistencia.php';
+	require_once $type.'.php';
 	$content = ob_get_clean();
 
 	require 'vendor/autoload.php';
