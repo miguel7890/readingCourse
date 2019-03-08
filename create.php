@@ -1,6 +1,6 @@
 <?php 
 	ob_start();
-	require_once 'view.php';
+	require_once 'asistencia.php';
 	$content = ob_get_clean();
 
 	require 'vendor/autoload.php';
