@@ -42,7 +42,7 @@
 						<p><b>Grado:</b> <?php echo $row['grado']; ?>º Grado</p>
 						<p><b>Encargado:</b> <?php echo $row['encargado']; ?></p>
 						<p><b>Contacto:</b> <?php echo $row['contacto']; ?></p>
-						<p><b>Curso:</b> Lectura <span style="padding: 0px 10px;">|</span> <b>Inscripción:</b> <?php echo $row['inscripcion']; ?></p>
+						<p><b>Curso:</b> <?php echo $row['curso']; ?> <span style="padding: 0px 10px;">|</span> <b>Inscripción:</b> <?php echo $row['inscripcion']; ?></p>
 						<hr>
 						<div class="center-xs">
 							<a href="edit.php?id=<?php echo $row['id_student']; ?>"><button class="btn btn-natural" style="width: 30%;">Editar</button></a>
