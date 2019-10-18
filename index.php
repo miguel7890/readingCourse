@@ -93,6 +93,7 @@
 							<select name="curso" id="Curso">
 								<option value="default">--</option>
 								<option value="Lectura">Lectura</option>
+								<option value="Matemáticas">Lenguaje</option>
 								<option value="Matemáticas">Matemáticas</option>
 							</select>
 						</div>
