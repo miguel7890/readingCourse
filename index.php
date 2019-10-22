@@ -98,7 +98,7 @@
 							</select>
 						</div>
 						<div class="space">
-							<label for="Inscripcion">Fecha de inscripción</label><br>
+							<label for="Inscripcion">Fecha de inscripción - La</label><br>
 							<input type="date" name="inscripcion" id="Inscripcion">
 						</div>
 						<br><br><hr>
