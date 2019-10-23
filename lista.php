@@ -13,6 +13,7 @@
 
 		while($row = $sql -> FetchArray()){
 			echo $row['nombre']." ".$row['apellido'].'<span>,</span>';
+			echo "";
 		};
 	?>
 
