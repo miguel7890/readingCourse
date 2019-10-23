@@ -24,7 +24,7 @@
 
 	<nav class="container-fluid">
 		<div class="row middle-xs nav_bar">
-			<h3 class="col-xs-12 col-md-8 center-xs start-md">Fundación Forever</h3>
+			<h3 class="col-xs-12 col-md-8 center-xs start-md">Fundación Forever El Salvador</h3>
 			<div class="col-xs-12 col-md-4 center-xs end-md">
 				<a href="index.php"><button class="btn btn-natural">Añadir</button></a>
 				<a href="list.php"><button class="btn btn-natural">Listado</button></a>
