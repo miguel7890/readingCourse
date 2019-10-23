@@ -28,6 +28,7 @@
 			<div class="col-xs-12 col-md-4 center-xs end-md">
 				<a href="index.php"><button class="btn btn-natural">Añadir</button></a>
 				<a href="list.php"><button class="btn btn-natural">Listado</button></a>
+				<a href="list.php"><button class="btn btn-natural">Otro</button></a>
 			</div>
 		</div>
 	</nav>
@@ -37,7 +38,7 @@
 
 			<div class="col-xs-12 col-md-6 space">
 				<div class="box-form">
-					<h1>Formulario de inscripción</h1>
+					<h1>Formulario de inscripción para becas</h1>
 					<hr>
 					<form action="fn/send.php" method="POST">
 						<h2>Datos personales</h2>
